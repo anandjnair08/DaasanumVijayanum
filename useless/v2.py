@@ -1,13 +1,16 @@
 import serial
 import time
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 # Replace with your COM port
 PORT = "COM9"
 BAUD = 9600
 
 # Your OpenAI API Key
-API_KEY = "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"
+API_KEY = os.getenv("OPENAI_API_KEY")
 
 # OpenAI API endpoint for Chat Completions
 API_URL = "https://api.openai.com/v1/chat/completions"
